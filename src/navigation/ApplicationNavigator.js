@@ -30,7 +30,11 @@ const HomeStackScreen = () => {
 const MainTab = createBottomTabNavigator();
 const MainTabScreen = () => {
     return (
-        <MainTab.Navigator>
+        <MainTab.Navigator
+            // tabBarOptions={
+                
+            // }
+        >
             <MainTab.Screen 
                 name="Home"
                 component={HomeStackScreen}

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Text, View } from 'react-native'
 
 import styles from './styles'
+import color from '../../constants/color'
 
 export class HomeScreen extends Component {
     render() {
