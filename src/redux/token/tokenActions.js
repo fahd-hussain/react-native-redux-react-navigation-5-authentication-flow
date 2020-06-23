@@ -1,7 +1,8 @@
-import axios from "axios";
+// import axios from "axios";
 
 // Local Imports
 import baseUrl from "../../constants/baseUrl";
+import { round } from "react-native-reanimated";
 
 // Global Variables
 const url = `${baseUrl}users`;
@@ -26,92 +27,34 @@ const fetchTokenFailure = (error) => {
     };
 };
 
-export const fetchToken = (username, password) => (dispatch) => {
+export const purgeToken = () => (dispatch) => {
     dispatch(fetchTokenRequest());
-
-    const promiseArray = [];
-
-    promiseArray.push(
-        new Promise((resolve, reject) => {
-            setTimeout(() => {
-                const token = "Bearer 123456789";
-                dispatch(fetchTokenSuccess(token));
-                resolve(token)
-            }, 2000)
-            // axios(`${url}/login`, {
-            //     method: "POST",
-            //     headers: {
-            //         "Content-Type": "application/json",
-            //     },
-            //     data: JSON.stringify({ username, password }),
-            // })
-            //     .then((res) => {
-            //         const token = "Bearer " + res.data.token;
-            //         dispatch(fetchTokenSuccess(token));
-            //         resolve(token);
-            //     })
-            //     .catch((error) => {
-            //         dispatch(fetchTokenFailure(error));
-            //         reject(error);
-            //     });
-        }),
-    );
-
-    return Promise.all(promiseArray);
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            dispatch(fetchTokenSuccess(null));
+            resolve(null);
+        }, 1500);
+    });
 };
-// --------------------------------------------------------------------------- //
-export const setToken = (username, password, firstname, lastname, gender) => (dispatch) => {
+
+export const loginRequest = (username, password) => (dispatch) => {
     dispatch(fetchTokenRequest());
-
-    const promiseArray = [];
-
-    promiseArray.push(
-        new Promise((resolve, reject) => {
-            axios(`${url}/signup`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                data: JSON.stringify({ username, password, firstname, lastname, gender }),
-            })
-                .then((res) => {
-                    const token = "Bearer " + res.data.token;
-                    dispatch(fetchTokenSuccess(token));
-                    resolve(token);
-                })
-                .catch((error) => {
-                    dispatch(fetchTokenFailure(error));
-                    reject(error);
-                });
-        }),
-    );
-
-    return Promise.all(promiseArray);
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const token = "Bearer 123456789";
+            dispatch(fetchTokenSuccess(token));
+            resolve(token);
+        }, 1000);
+    });
 };
-//---------------------------------------------------------------------------- //
-export const removeToken = () => (dispatch) => {
+
+export const registerRequest = (username, password, firstname, lastname, gender) => (dispatch) => {
     dispatch(fetchTokenRequest());
-
-    const promiseArray = [];
-
-    promiseArray.push(
-        new Promise((resolve, reject) => {
-            axios(`${url}/logout`, {
-                method: "GET",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-            })
-                .then(() => {
-                    dispatch(fetchTokenSuccess(null));
-                    resolve("done");
-                })
-                .catch((error) => {
-                    dispatch(fetchTokenFailure(error));
-                    reject(error);
-                });
-        }),
-    );
-
-    return Promise.all(promiseArray);
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const token = "Bearer 123456789";
+            dispatch(fetchTokenSuccess(token));
+            resolve(token);
+        }, 1000);
+    });
 };

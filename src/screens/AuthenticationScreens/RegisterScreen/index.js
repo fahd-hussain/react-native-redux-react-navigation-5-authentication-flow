@@ -1,16 +1,24 @@
-import React, { Component } from 'react'
-import { Text, View } from 'react-native'
+import React, { useContext } from "react";
+import { Text, View } from "react-native";
+import { Button } from "native-base";
 
-import styles from './styles'
+import styles from "./styles";
+import { AuthContext } from "../../../utils/authContext";
 
-class RegisterScreen extends Component {
-    render() {
-        return (
-            <View style={styles.container}>
-                <Text> Register Screen </Text>
-            </View>
-        )
-    }
-}
+const RegisterScreen = ({ navigation }) => {
+    const { register } = useContext(AuthContext);
 
-export default RegisterScreen
+    return (
+        <View style={styles.container}>
+            <Text> Register Screen </Text>
+            <Button onPress={() => register()} style={{ width: "90%" }}>
+                <Text>Register</Text>
+            </Button>
+            <Button onPress={() => navigation.replace("Login")} style={{ width: "90%" }}>
+                <Text>Login</Text>
+            </Button>
+        </View>
+    );
+};
+
+export default RegisterScreen;

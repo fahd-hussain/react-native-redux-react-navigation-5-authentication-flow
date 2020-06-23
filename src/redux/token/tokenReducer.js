@@ -1,7 +1,8 @@
-const initState = {
+export const initState = {
     loading: false,
-    token: "",
+    token: null,
     error: "",
+    login: false
 };
 
 export const tokenReducer = (state = initState, action) => {
@@ -16,6 +17,7 @@ export const tokenReducer = (state = initState, action) => {
             return {
                 ...state,
                 token: action.payload,
+                login: true,
                 loading: false,
                 error: "",
             };

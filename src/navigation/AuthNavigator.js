@@ -12,7 +12,7 @@ const options = {
 
 const AuthenticationNavigator = () => {
     return (
-        <AuthStack.Navigator initialRouteName="Register" mode="modal">
+        <AuthStack.Navigator initialRouteName="Login" mode="modal">
             <AuthStack.Screen
                 name="Login"
                 component={LoginScreen}

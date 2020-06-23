@@ -1,1 +1,1 @@
-export { fetchToken } from "./token/tokenActions"
+export { loginRequest, registerRequest, purgeToken } from "./token/tokenActions"

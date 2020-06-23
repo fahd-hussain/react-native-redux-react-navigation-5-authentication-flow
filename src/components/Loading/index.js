@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Text, View, ActivityIndicator } from "react-native";
 
 import { lightColor } from "../../constants/color";
