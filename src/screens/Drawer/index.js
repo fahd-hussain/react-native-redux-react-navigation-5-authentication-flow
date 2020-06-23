@@ -24,11 +24,11 @@ const DrawerItems = [
     },
 ];
 
-const Drawer = ({ navigation }) => {
+const Drawer = (props) => {
     const { logout } = useContext(AuthContext)
 
-    console.log(navigation)
-    
+    // console.log(props.navigation )
+
     return (
         <SafeAreaView style={styles.container}>
             <View>
@@ -38,7 +38,7 @@ const Drawer = ({ navigation }) => {
                 dataArray={DrawerItems}
                 keyExtractor={(element) => element.title}
                 renderRow={(element) => (
-                    <ListItem icon onPress={() => console.log(`${element.title} is pressed`)}>
+                    <ListItem icon onPress={() => props.navigation.navigate(element.routeName)}>
                         <Left>
                             <Icon style={styles.drawerContentIcon} type="FontAwesome" name={element.iconName} />
                         </Left>

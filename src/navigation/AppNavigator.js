@@ -64,8 +64,7 @@ const MainDrawer = createDrawerNavigator();
 const AppDrawer = (props) => {
     console.log(props)
     return (
-        <MainDrawer.Navigator drawerType="back" drawerStyle={styles.drawerStyle} drawerContent={() => <Drawer />}>
-        
+        <MainDrawer.Navigator drawerType="back" drawerStyle={styles.drawerStyle} drawerContent={(props) => <Drawer {...props} />}>
             <MainDrawer.Screen name="Home" component={MainTabScreen} />
             <MainDrawer.Screen name="Profile" component={ProfileStackScreen} />
         </MainDrawer.Navigator>
