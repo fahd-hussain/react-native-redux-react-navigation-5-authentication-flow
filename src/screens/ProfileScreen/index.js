@@ -1,23 +1,14 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { View, Text } from 'react-native'
-import { connect } from 'react-redux'
 
-export class ProfileScreen extends Component {
-    render() {
-        return (
-            <View>
-                <Text> Profile Screen </Text>
-            </View>
-        )
-    }
+import styles from "./styles";
+
+const ProfileScreen = () => {
+    return (
+        <View style={styles.container}>
+            <Text></Text>
+        </View>
+    )
 }
 
-const mapStateToProps = (state) => ({
-    
-})
-
-const mapDispatchToProps = {
-    
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(ProfileScreen)
+export default ProfileScreen

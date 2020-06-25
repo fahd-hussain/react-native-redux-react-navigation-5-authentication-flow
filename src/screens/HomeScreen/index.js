@@ -1,17 +1,14 @@
-import React, { Component } from 'react'
-import { Text, View } from 'react-native'
+import React from 'react'
+import { View, Text } from 'react-native'
 
-import styles from './styles'
-import color from '../../constants/color'
+import styles from "./styles";
 
-export class HomeScreen extends Component {
-    render() {
-        return (
-            <View style={styles.container}>
-                <Text> Home Screen </Text>
-            </View>
-        )
-    }
+const HomeScreen = () => {
+    return (
+        <View style={styles.container}>
+            <Text>This is home</Text>
+        </View>
+    )
 }
 
 export default HomeScreen

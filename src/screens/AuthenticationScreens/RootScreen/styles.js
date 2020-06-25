@@ -10,6 +10,22 @@ const styles = StyleSheet.create({
         backgroundColor: lightColor.textPrimaryColor,
         flex: 1,
         justifyContent: "center",
+    },
+    logoContainer: {
+        // backgroundColor: lightColor.lightPrimaryColor,
+        // backgroundColor: "orange",
+        flex: 1,
+        justifyContent: "center",
+        // alignItems: "center",
+    },
+    logoImage: {
+        flex: 1,
+        resizeMode: "cover",
+        justifyContent: "center",
+    },
+    otherContainer: {
+        flex: 1,
+        justifyContent: "center",
         alignItems: "center",
     },
     buttonContainer: {
@@ -28,12 +44,8 @@ const styles = StyleSheet.create({
         fontFamily: "Overcraft-Regular",
         fontSize: 24,
         paddingRight: 20,
-        color: lightColor.textPrimaryColor
-    },
-    backArrow: {
         color: lightColor.textPrimaryColor,
-        paddingLeft: padding
-    }
+    },
 });
 
 export default styles;

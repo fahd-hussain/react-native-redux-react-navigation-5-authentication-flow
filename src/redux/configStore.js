@@ -20,7 +20,7 @@ export default ConfigureStore = () => {
         }),
         applyMiddleware(
             thunk,
-            logger
+            // logger
         ),
     );
 

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Text, View } from "react-native";
 import { Button } from "native-base";
 
@@ -7,6 +7,10 @@ import { AuthContext } from "../../../utils/authContext";
 
 const RegisterScreen = ({ navigation }) => {
     const { register } = useContext(AuthContext);
+
+    useEffect(() => {
+        navigation.setOptions({ title: 'REGISTER' })
+    }, [])  
 
     return (
         <View style={styles.container}>

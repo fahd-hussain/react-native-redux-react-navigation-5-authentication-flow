@@ -27,8 +27,6 @@ const DrawerItems = [
 const Drawer = (props) => {
     const { logout } = useContext(AuthContext)
 
-    // console.log(props.navigation )
-
     return (
         <SafeAreaView style={styles.container}>
             <View>

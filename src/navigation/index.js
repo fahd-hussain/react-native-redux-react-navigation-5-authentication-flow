@@ -17,7 +17,9 @@ const AppContainer = () => {
 
     useEffect(() => {
         const { token, loading, login } = userToken;
+
         setLoading(loading);
+        
         if (login) {
             setToken(token);
         }
