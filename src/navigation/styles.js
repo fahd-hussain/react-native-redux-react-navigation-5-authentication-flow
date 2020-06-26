@@ -24,6 +24,10 @@ const styles = StyleSheet.create({
         fontSize: 28,
         color: lightColor.textPrimaryColor
     },
+    headerLeftIcon: {
+        color: lightColor.textPrimaryColor,
+        paddingLeft: padding
+    },
     backArrow: {
         color: lightColor.textPrimaryColor,
         paddingLeft: padding

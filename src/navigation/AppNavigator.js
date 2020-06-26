@@ -18,20 +18,26 @@ const options = {
 
 //---------------- Home Screen Stack ----------------//
 const HomeStack = createStackNavigator();
-const HomeStackScreen = () => {
+const HomeStackScreen = ({ navigation }) => {
     return (
         <HomeStack.Navigator initialRouteName="Home">
             <HomeStack.Screen
                 name="Home"
                 component={HomeScreen}
-                options={{ title: "HOME", headerTitleAlign: options.headerTitleAlign, headerStyle: options.headerStyle, headerTitleStyle: options.headerTitleStyle}}
+                options={{ 
+                    title: "HOME", 
+                    headerTitleAlign: options.headerTitleAlign, 
+                    headerStyle: options.headerStyle, 
+                    headerTitleStyle: options.headerTitleStyle,
+                    headerLeft: () => <Icon style={styles.headerLeftIcon} type="FontAwesome" name="bars" onPress={() => navigation.openDrawer()}/>
+                }}
             />
         </HomeStack.Navigator>
     );
 };
 //---------------- Home Screen Stack ----------------//
 const ProfileStack = createStackNavigator();
-const ProfileStackScreen = () => {
+const ProfileStackScreen = ({ navigation }) => {
     return (
         <ProfileStack.Navigator initialRouteName="Profile">
             <ProfileStack.Screen
@@ -40,7 +46,13 @@ const ProfileStackScreen = () => {
                 // options={({ route }) => ({
                 //     title: route.params.name
                 // })}
-                options={{ title: "PROFILE", headerTitleAlign: options.headerTitleAlign, headerStyle: options.headerStyle, headerTitleStyle: options.headerTitleStyle}}
+                options={{ 
+                    title: "PROFILE", 
+                    headerTitleAlign: options.headerTitleAlign, 
+                    headerStyle: options.headerStyle, 
+                    headerTitleStyle: options.headerTitleStyle,
+                    headerLeft: () => <Icon style={styles.headerLeftIcon} type="FontAwesome" name="bars" onPress={() => navigation.openDrawer()}/>
+                }}
             />
         </ProfileStack.Navigator>
     );
@@ -74,11 +86,17 @@ const MainTabScreen = () => {
 };
 
 //---------------- Main Drawer ----------------//
+const drawerOptions = {
+    activeTintColor: lightColor.textPrimaryColor,
+    activeBackgroundColor: lightColor.defaultPrimaryColor,
+    inactiveTintColor: lightColor.primaryTextColor,
+    inactiveBackgroundColor: lightColor.textPrimaryColor
+}
 const MainDrawer = createDrawerNavigator();
-const AppDrawer = (props) => {
+const AppDrawer = () => {
     return (
-        <MainDrawer.Navigator drawerType="back" drawerStyle={styles.drawerStyle} drawerContent={(props) => <Drawer {...props} />}>
-            <MainDrawer.Screen name="Home" component={MainTabScreen} />
+        <MainDrawer.Navigator drawerContentOptions={{ activeTintColor: "white" }} drawerType="back" drawerStyle={styles.drawerStyle} drawerContent={(props) => <Drawer {...props} />}>
+            <MainDrawer.Screen name="Home" component={MainTabScreen}/>
             <MainDrawer.Screen name="Profile" component={ProfileStackScreen} />
         </MainDrawer.Navigator>
     );

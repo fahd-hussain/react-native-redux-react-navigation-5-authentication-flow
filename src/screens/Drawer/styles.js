@@ -16,6 +16,22 @@ const styles = StyleSheet.create({
     drawerContentTitle: {
         // paddingLeft: 10
     },
+    displayPictureContainer: {
+        paddingVertical: 10,
+        alignItems: "center",
+        justifyContent: "center",
+    },
+    displayPicture: {
+        fontSize: (Dimensions.get("window").width * 1) / 2 - 10,
+        marginBottom: "5%",
+        color: lightColor.defaultPrimaryColor,
+    },
+    displayPictureText: {
+        fontFamily: "Overcraft-Regular",
+        fontWeight: "bold",
+        color: lightColor.primaryTextColor,
+        fontSize: 18
+    },
 });
 
 export default styles;

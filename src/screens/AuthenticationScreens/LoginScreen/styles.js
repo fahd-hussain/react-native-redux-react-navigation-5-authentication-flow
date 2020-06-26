@@ -30,10 +30,6 @@ const styles = StyleSheet.create({
         paddingRight: 20,
         color: lightColor.textPrimaryColor
     },
-    backArrow: {
-        color: lightColor.textPrimaryColor,
-        paddingLeft: padding
-    }
 });
 
 export default styles;
