@@ -1,10 +1,11 @@
 import React, { useContext, useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { View, SafeAreaView, ScrollView, TouchableOpacity, Dimensions } from "react-native";
+import { View, SafeAreaView, ScrollView, TouchableOpacity, ImageBackground } from "react-native";
 import { List, ListItem, Text, Icon, Left, Body } from "native-base";
 
 import styles from "./styles";
 import { AuthContext } from "../../utils/authContext";
+import { images } from "../../constants/images";
 
 const DrawerItems = [
     {
@@ -39,30 +40,24 @@ const Drawer = (props) => {
             setAuth(true);
         }
     }, []);
+
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.displayPictureContainer}>
                 <TouchableOpacity>
-                    {profilePicture === null ? (
-                        <Icon
-                            name="user"
-                            type="FontAwesome"
-                            fontSize={(Dimensions.get("window").width * 1) / 2}
-                            style={styles.displayPicture}
-                        />
-                    ) : (
-                        // display picture
-                        <Icon
-                            name="arrow-left"
-                            type="FontAwesome"
-                            fontSize={(Dimensions.get("window").width * 1) / 2}
-                            style={styles.displayPicture}
-                        />
-                    )}
+                    <ImageBackground
+                        source={profilePicture === null ? images.profilePicture : profilePicture}
+                        style={styles.displayPicture}
+                        imageStyle={styles.displayPictureRadius}
+                    >
+                        {/* <View style={{ paddingLeft: width / 1.7, paddingTop: width / 1.7 }}>
+                            <Icon name="edit" type="FontAwesome" onPress={getImageFromGallery} />
+                        </View> */}
+                    </ImageBackground>
                 </TouchableOpacity>
                 <View>
                     {auth ? (
-                        <View style={{ flexDirection: "row" }} >
+                        <View style={{ flexDirection: "row" }}>
                             <Text style={[styles.displayPictureText]}>
                                 {firstname} {lastname}
                             </Text>

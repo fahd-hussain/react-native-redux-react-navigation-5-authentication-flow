@@ -1,9 +1,9 @@
 import { StyleSheet, Dimensions } from "react-native";
 
-const width = Dimensions.get("window").width;
-
 import { lightColor } from "../../constants/color";
 
+const width = Dimensions.get("window").width * 1;
+const padding = 10;
 const styles = StyleSheet.create({
     container: {
         backgroundColor: lightColor.textPrimaryColor,
@@ -17,16 +17,19 @@ const styles = StyleSheet.create({
         // paddingLeft: 10
     },
     displayPictureContainer: {
-        paddingVertical: 10,
+        padding: padding,
         alignItems: "center",
         justifyContent: "center",
     },
     displayPicture: {
-        fontSize: (Dimensions.get("window").width * 1) / 2 - 10,
-        marginBottom: "5%",
-        color: lightColor.defaultPrimaryColor,
+        width: width / 2,
+        height: width / 2,
+    },
+    displayPictureRadius: {
+        borderRadius: (width / 1.5)
     },
     displayPictureText: {
+        padding: padding,
         fontFamily: "Overcraft-Regular",
         fontWeight: "bold",
         color: lightColor.primaryTextColor,

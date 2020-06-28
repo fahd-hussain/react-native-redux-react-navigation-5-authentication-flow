@@ -1,6 +1,6 @@
 export const images = {
   logo: require('../../assets/logo.png'),
-  // newLogo: require('../../assets/newLogo.png'),
+  profilePicture: require('../../assets/profilePicture.png'),
 };
 
 // export const tabBarIcons = {
